@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Angir dokumenttypen som HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Sikrer at nettsiden er responsiv og tilpasser seg skjermstørrelsen på ulike enheter -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Definerer forfatteren av nettsiden -->
+    <meta name="author" content="Ali">
+    <!-- Beskrivelse av nettsiden, som brukes av søkemotorer -->
+    <meta name="description" content="Store Hours for The Taco Shop">
+    <!-- Tittelen som vises i nettleserfanen -->
+    <title>tacoShopHoursDocument</title>
+
+    <!-- Lenker til eksterne ressurser -->
+
+    <!-- Kobler til et eksternt stilark (CSS) for utseende -->
+    <link rel="stylesheet" href="cssFolder/style.css">
+    <!-- Favicon-ikon som vises i nettleserfanen -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- JavaScript-fil som lastes inn etter at HTML-en er ferdig lastet -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <!-- Header-seksjonen på nettsiden -->
+    <header class="header">
+        <!-- Hovedtittel for headeren -->
+        <h1 class="header__h1">The Taco Shop</h1>
+        <!-- Navigasjonsmeny i headeren -->
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <!-- Lenker til ulike sider på nettstedet -->
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/#menu">Menu</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero-seksjon, ofte brukt til å fremheve visuelt innhold -->
+    <section class="hero">
+        <!-- Inneholder bilde og bildetekst -->
+        <figure>
+            <!-- Bilde av en brett med tacos med alternativ tekst og tittel -->
+            <img src="imageFolder/tacos_tray_1000x667.png" alt="A Tray of Tasty Tacos" title="We love trays of tacos!"
+                width="1000" height="667">
+            <!-- Skjult bildetekst for skjermlesere -->
+            <figcaption class="offscreen">
+                A Tray of Tasty Tacos
+            </figcaption>
+        </figure>
+    </section>
+
+    <!-- Hovedinnholdet på siden -->
+    <main class="main">
+        <!-- Artikkel om åpningstider -->
+        <article class="main__article">
+            <h2>Hours</h2>
+            <p>
+                We are open 7 days a week!
+            </p>
+            <!-- Definisjonsliste som viser åpningstider -->
+            <dl>
+                <!-- Åpningstider for søndag til torsdag -->
+                <dt>Sunday-Thursday</dt>
+                <dd>11am-9pm</dd>
+                <!-- Åpningstider for fredag og lørdag -->
+                <dt>Friday-Saturday</dt>
+                <dd>11am-11pm</dd>
+            </dl>
+        </article>
+    </main>
+
+    <!-- Bunntekst på nettsiden -->
+    <footer class="footer">
+        <p>
+            <!-- Copyright-informasjon med dynamisk år -->
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <!-- Ekstra tekst i bunnteksten -->
+            <span class="nowrap">Alis magiske verden</span>
+        </p>
+    </footer>
+</body>
+
+</html>

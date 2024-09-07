@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Angir dokumenttypen som HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Sikrer at nettsiden er responsiv og tilpasser seg skjermstørrelsen på ulike enheter -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Definerer forfatteren av nettsiden -->
+    <meta name="author" content="Ali">
+    <!-- Beskrivelse av nettsiden, som brukes av søkemotorer -->
+    <meta name="description" content="Contact information for The Taco Shop">
+    <!-- Tittelen som vises i nettleserfanen -->
+    <title>contactTsDocument</title>
+
+    <!-- Lenker til eksterne ressurser -->
+
+    <!-- Kobling til stilarket (CSS) -->
+    <link rel="stylesheet" href="cssFolder/style.css">
+    <!-- Favicon-ikonet som vises i nettleserfanen -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Lenker til JavaScript-filen, som lastes inn etter HTML-en er ferdig lastet -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <!-- Header-delen av nettsiden -->
+    <header class="header">
+        <!-- Tittel for headeren -->
+        <h1 class="header__h1">The Taco Shop</h1>
+        <!-- Navigasjonsmeny i headeren -->
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <!-- Lenker til ulike sider på nettstedet -->
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/#menu">Menu</a>
+                </li>
+                <li>
+                    <a href="hours.html">Hours</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero-seksjon, som ofte brukes til å fremheve visuelt innhold -->
+    <section class="hero">
+        <!-- Figur som inneholder et bilde og en bildetekst -->
+        <figure>
+            <!-- Bilde av tacos med en tittel og alternativ tekst for tilgjengelighet -->
+            <img src="imageFolder/tacos_close_up_1000x649.png" alt="Little Taco Shop Tacos" title="Tacos ready to eat!"
+                width="1000" height="649">
+            <!-- Skjult bildetekst for tilgjengelighet (skjermlesere) -->
+            <figcaption class="offscreen">
+                Little Taco Shop Tacos
+            </figcaption>
+        </figure>
+    </section>
+
+    <!-- Hovedinnholdet på nettsiden -->
+    <main class="main">
+        <!-- Artikkel som viser butikkens beliggenhet -->
+        <article class="main__article">
+            <h2>Our Location</h2>
+            <!-- Adresseinformasjon for butikken -->
+            <address>
+                2315 The good street, 45B<br>
+                Hamar
+                <br><br>
+                <!-- Telefonnummer som kan klikkes på for å ringe -->
+                Phone: <a href="tel:+5555555555">44414441</a>
+            </address>
+        </article>
+        <hr>
+        <!-- Artikkel som inneholder et kontaktskjema -->
+        <article class="main__article contact">
+            <h2 class="contact__h2">Our Contact Form</h2>
+
+            <!-- Kontaktskjema med GET-metoden som sender forespørsel til httpbin.org -->
+            <form action="https://httpbin.org/get" method="get" class="contact__form">
+                <fieldset class="contact__fieldset">
+                    <!-- Legende (skjult) for feltsettet for bedre tilgjengelighet -->
+                    <legend class="offscreen">Send Us A Message</legend>
+                    <!-- Navn-feltet -->
+                    <p class="contact__p">
+                        <label class="contact__label" for="name">Name:</label>
+                        <input class="contact__input" type="text" name="name" id="name" placeholder="your name"
+                            required>
+                    </p>
+                    <!-- E-post-feltet -->
+                    <p class="contact__p">
+                        <label class="contact__label" for="email">Email:</label>
+                        <input class="contact__input" type="email" name="email" id="email" placeholder="your email"
+                            required>
+                    </p>
+                    <!-- Meldingsfeltet -->
+                    <p class="contact__p">
+                        <label class="contact__label" for="message">Your Message:</label>
+                        <br>
+                        <textarea class="contact__textarea" name="message" id="message" cols="30" rows="10"
+                            placeholder="Type your message here"></textarea>
+                    </p>
+                </fieldset>
+                <!-- Send-knappen -->
+                <button class="contact__button" type="submit">Send</button>
+                <!-- Reset-knappen som tilbakestiller skjemaet -->
+                <button class="contact__button" type="reset">Reset</button>
+            </form>
+        </article>
+    </main>
+
+    <!-- Bunntekst på nettsiden -->
+    <footer class="footer">
+        <p>
+            <!-- Copyright-informasjon -->
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <!-- Ekstra tekst i bunnteksten -->
+            <span class="nowrap">Alis magiske verden</span>
+        </p>
+    </footer>
+</body>
+
+</html>

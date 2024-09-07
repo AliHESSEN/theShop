@@ -1,0 +1,535 @@
+/* Importerer Google Fonts (Fugaz One og Nunito) for bruk på nettsiden */
+
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&display=swap');
+
+
+
+/* CSS reset for å fjerne standard margin og padding på alle elementer */
+*, *::after, *::before
+{
+    margin: 0; /* Fjerner standard margin */
+    padding: 0; /* Fjerner standard padding */
+    box-sizing: border-box; /* Setter box-sizing til border-box, så padding og border inkluderes i elementets totale bredde/høyde */
+}
+
+img
+{
+    display: block; /* Fjerner mellomrom rundt bilder ved å sette dem som blokkelement */
+    max-width: 100%; /* Sørger for at bildet aldri blir større enn sin foreldres bredde */
+    height: auto; /* Beholder bildeforholdet ved endring av bredde */
+}
+
+
+input, button, textarea
+{
+    font: inherit;
+
+}
+
+/* variabler styling */
+
+:root
+{
+    /* fonts */
+
+    --FF: "Nunito", sans-serif;
+    --FF-HEADINGS: "Fugaz One", cursive;
+    --FS: clamp(1rem, 2.2vh, 1.5rem); /* starter på 1rem, kan vokse til 2.2 høyde 
+    og stopper på 1.5rem i størrelse max*/
+
+   
+    /* farger */
+
+    --BGCOLOR: orange; /* bakgrunnsfarge */
+    --BGCOLOR-FADE: rgb(252,220, 160);
+    --BGIMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
+    --BODY--BGCOLOR: #fff;
+    --FONT-COLOR: #000;
+    --BORDER-COLOR: #333;
+    --HIGHLIGHT-COLOR: rgb(51, 178, 51);
+    --LINK-COLOR: #000;
+    --LINK-HOVER: hsla(0,0%,0%, 0.6);
+    --LINK-ACTIVE: orange;
+    --HEADER-BGCOLOR: #000;
+    --HEADER-COLOR: #FFF;
+    --NAV-BGCOLOR: #FFF;
+    --HERO-BGCOLOR: rgba(51, 178, 51, 0.75);
+    --HERO-COLOR: #fff;
+
+
+
+
+    /* border */
+
+    --BORDERS: 1px solid var(--BORDER-COLOR);
+
+    /* standard padding */
+
+    --PADDING-TOPANDBOTTOM: 0.25em;
+    --PADDING-SIDE: 2.5%;
+
+    /* standard margin */
+
+    --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+
+
+
+}
+
+/* Utility-klasser */
+
+/* Skjuler elementer fra visningen, men gjør dem tilgjengelige for skjermlesere */
+.offscreen
+{
+    position: absolute; /* Plasserer elementet absolutt i forhold til nærmeste posisjonerte forelder */
+    left: -100000px; /* Flytter elementet langt utenfor skjermen */
+}
+
+/* Hindrer at teksten brytes til en ny linje */
+.nowrap
+{
+    white-space: nowrap; /* Sørger for at innholdet vises på én linje uten linjeskift */
+}
+
+/* Sentrerer tekst horisontalt */
+.center
+{
+    text-align: center; /* Sentrerer teksten inne i elementet */
+}
+
+/* generelt styling */
+
+html
+{
+    scroll-behavior: smooth; /* har smooth scrolling på nettsiden */
+    font-size: var(--FS); /* størrelse på font */
+    font-family: var(--FF); /* endrer font familiy */
+    background-color: var(--BGCOLOR);
+    background-image: var(--BGIMAGE);
+
+
+}
+
+/* styling for body */
+
+body
+{
+    /* Setter bakgrunnsfargen for body-elementet til en CSS-variabel */
+    background-color: var(--BODY--BGCOLOR); 
+    
+    /* Setter tekstfargen til en variabel */
+    color: var(--FONT-COLOR); 
+    
+    /* Sørger for at body har en minimumshøyde på hele skjermen (viewport height) */
+    min-height: 100vh; 
+    
+    /* Maksimal bredde på 800px for innholdet i body */
+    max-width: 800px; 
+    
+    /* Setter topp- og bunn-margin til 0, og venstre/høyre til auto for å sentrere innholdet horisontalt */
+    margin: 0 auto; /* Fjern komma, skal være mellomrom mellom verdiene */
+    
+    /* Legger til venstre kantlinje ved bruk av variabelen --BORDERS */
+    border-left: var(--BORDERS); 
+    
+    /* Legger til høyre kantlinje ved bruk av variabelen --BORDERS */
+    border-right: var(--BORDERS); 
+    
+    /* Legger til en skygge rundt body-elementet med en uskarphet på 10px */
+    box-shadow: 0 0 10px var(--BORDER-COLOR); 
+
+
+}
+
+
+/* styling av h1, h2 og h3 */
+h1, h2, h3 
+{
+    /* Setter fontfamilien for h1, h2 og h3 til verdien av variabelen --FF-HEADINGS */
+    font-family: var(--FF-HEADINGS); 
+
+    /* Øker mellomrommet mellom bokstavene (letter-spacing) til 0.1em */
+    letter-spacing: 0.1em; 
+
+    /* Legger til en margin nederst på 1em for å skape avstand til neste element */
+   /*  margin-bottom: 1em;  */
+
+    /* Setter fargen på overskriftene til verdien av variabelen --HIGHLIGHT-COLOR */
+    color: var(--HIGHLIGHT-COLOR); 
+}
+
+
+/* paragrafer styling */
+
+p
+{
+    line-height: 1.5;
+
+}
+
+/* styling av linker */
+
+a:any-link  /* gjelder for både links som ikke er trykket på og de som er  */
+{
+    color: var(--LINK-COLOR);
+
+
+}
+
+a:hover, a:focus-visible
+{
+    color: var(--LINK-HOVER);
+
+
+}
+
+a:active
+{
+    color: var(--LINK-ACTIVE);
+
+}
+
+/* header */
+
+.header
+{
+    /* Gjør at headeren forblir på toppen av viewportet når du ruller nedover på siden */
+    position: sticky; 
+    
+    /* Setter avstanden fra toppen av viewportet når headeren blir festet */
+    top: 0; 
+    
+    /* Angir z-index for å sørge for at headeren vises over andre elementer med lavere z-index */
+    z-index: 1; 
+}
+
+
+.header__h1
+{
+    /* Sentrerer teksten horisontalt i header__h1-elementet */
+    text-align: center; 
+    
+    /* Setter bakgrunnsfargen til header__h1-elementet til verdien av variabelen --HEADER-BGCOLOR */
+    background-color: var(--HEADER-BGCOLOR); 
+    
+    /* Setter fargen på teksten i header__h1-elementet til verdien av variabelen --HEADER-COLOR */
+    color: var(--HEADER-COLOR); 
+    
+    /* Legger til padding (indre avstand) med verdier fra variablene */
+    padding: var(--PADDING-TOPANDBOTTOM) var(--PADDING-SIDE); 
+   
+    /* Padding-verdiene er definert som:
+       --PADDING-TOPANDBOTTOM: Padding på toppen og bunnen
+       --PADDING-SIDE: Padding på venstre og høyre side */
+}
+
+.header__nav
+{
+
+    background-color: var(--NAV-BGCOLOR);
+    border-bottom: var(--BORDERS);
+    font-weight: bold;
+    box-shadow: 0, 6px, 5px, -5px var(--BORDER-COLOR);
+
+}
+
+.header__ul
+{
+    /* Legger til padding (indre avstand) med verdier fra variablene */
+    padding: var(--PADDING-TOPANDBOTTOM) var(--PADDING-SIDE); 
+    
+    
+    /* Fjerner standard punkter eller nummerering fra listen */
+    list-style-type: none; 
+    
+    /* Gjør listen til et fleksibelt beholder for horisontal plassering av elementene */
+    display: flex; 
+    
+    /* Fordeler plass mellom elementene i listen jevnt */
+    justify-content: space-evenly; 
+    
+    /* Legger til et mellomrom på 1rem mellom elementene i listen */
+    gap: 1rem; 
+}
+
+/* hero delen */
+
+.hero 
+{
+    position: relative;
+
+
+}
+
+.hero__h2 /* denne gjelder bare på home delen av nettsiden */
+{
+    background-color: var(--HERO-BGCOLOR);
+    color: var(--HERO-COLOR);
+    padding: 0.25em 0.5em;
+    text-shadow: 2px 2px 5px var(--BORDER-COLOR);
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    animation: showWelcome 6s ease-in-out 0s forwards;
+
+
+}
+
+/* lager animasjon */
+
+@keyframes showWelcome
+{
+    0% 
+    {
+        top: -20px;
+        transform: skew(0deg, -5deg) scaleY(0);
+    }
+
+    80% /* Endre prosent til 50% for en langsommere oppbygning */
+    {
+        top: 15px; /* Juster top for en jevnere overgang */
+        transform: skew(5deg, -5deg) scaleY(1.1);
+    }
+
+    100% 
+    {
+        top: 20px;
+        transform: skew(0deg, -5deg) scaleY(0);
+    }
+}
+
+/* footer styling */
+
+.footer {
+
+    /* Plasserer elementet nederst på siden eller i dets innebygde container */
+    bottom: 0;
+
+    /* Setter bakgrunnsfarge for footeren basert på en variabel (f.eks. --HEADER-BGCOLOR) */
+    background-color: var(--HEADER-BGCOLOR);
+
+    /* Setter tekstfargen for footeren basert på en variabel (f.eks. --HEADER-COLOR) */
+    color: var(--HEADER-COLOR);
+
+    /* Legger til litt ekstra plass (1px) over innholdet i footeren */
+    padding-top: 1px;
+
+    /* Legger til litt ekstra plass (0.1em) under innholdet i footeren */
+    padding-bottom: 0.1em;
+
+    /* Justerer tekstinnholdet i footeren slik at det er sentrert */
+    text-align: center;
+}
+
+
+/* main */
+
+.main
+{
+  padding: var(--PADDING-TOPANDBOTTOM) var(--PADDING-SIDE);
+
+}
+
+.main__article
+{
+    scroll-margin-top: 6.5rem;
+    margin: var(--MARGIN); /*  definerer hvor mye avstand som skal være mellom 
+    elementet og dets nærliggende elementer */
+
+}
+
+.main__article:first-child
+{
+    margin-top: 1em; /* gjelder for første artikkel, og det gjelder for alle sider */
+    
+}
+.main__article:last-child
+{
+    min-height: calc(100vh - 35rem); /* gjelder for siste artikkel, og det gjelder for alle sider */
+    
+}
+
+/* about styling */
+
+
+.about__trivia
+{
+    margin: var(--MARGIN);
+
+
+}
+
+.about__trivia-answer
+{
+    margin-top: 1em;
+
+}
+
+/* contatc */
+
+.contact__h2
+{
+    margin: 0;
+
+}
+
+.contact__fieldset
+{
+    border: none;
+
+}
+
+.contact__p
+{
+
+    margin: 1em 0;
+}
+
+.contact__label 
+{
+    /* Viser elementet som en blokk (blokkelement tar hele bredden) */
+    display: block;
+    
+    /* Gjør teksten fet (bold) */
+    font-weight: bold;
+}
+
+
+.contact__input, .contact__texarea
+{
+    /* Definerer innvendig (padding) rundt innholdet */
+    padding: 0.5em;
+    
+    /* Gjør kantene avrundet med en radius på 15px */
+    border-radius: 15px;
+    
+    /* Setter bredden på rammen til 2px */
+    border-width: 2px;
+    
+    /* Setter bredden til 100% av containeren */
+    width: 100%;
+}
+
+
+
+.contact__button 
+{
+    /* Definerer innvendig polstring (padding) rundt innholdet */
+    padding: 0.5em;
+    
+    /* Gjør kantene avrundet med en radius på 15px */
+    border-radius: 15px;
+    
+    /* Setter bakgrunnsfargen ved å bruke en variabel (HIGHLIGHT-COLOR) */
+    background-color: var(--HIGHLIGHT-COLOR);
+    
+    /* Definerer tekstfargen ved å bruke en variabel (HEADER-COLOR) */
+    color: var(--HEADER-COLOR);
+}
+
+/* meny styling */
+
+
+.menu__container 
+{
+    /* setter bredden til 100 % slik at tabellen fyller containeren */
+
+    width: 100%;
+    border-spacing: 0.5rem; /* mellomrom mellom celler */
+
+    /* Sørger for at tabellen ikke kollapser celler (det kan være ønskelig i enkelte tabeller) */
+    border-collapse: separate;
+
+    text-align: left; /* putter teksten til venstre i tabellen */
+
+
+
+}
+
+.menu__header
+{
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    padding: 0.75em 1em; /* legger til padding i cellene */
+    font-weight: bold; /* gjør teksten bold */
+
+    /* legger til ramme rund cellene */
+
+    border-bottom: 2px solid var(--BORDER-COLOR);
+
+}
+
+.menu__item
+{
+     /* Definerer fargen på teksten i meny-elementene */
+     color: var(--FONT-COLOR);
+     padding: 0.75em 1em;
+     border-bottom: 1px solid var(--BORDER-COLOR); /* legger til border under radene */
+
+}
+
+/* Tilpasser bredden på kolonnene */
+
+
+.menu__container th:first-child, .menu__container td:first-child
+{
+    /* taco-kolonnen får 50% av bredden */
+    width: 50%;
+
+}
+
+.menu__container th:nth-child(2), .menu__container td:nth-child(2)
+{
+    /* Quantity-kolonnen får 25% av bredden */
+    width: 25%;
+
+}
+
+/* Fotnote i tabellen */
+.menu__cs
+{
+    /* legger til padding */
+    padding: 0.75em 1em;
+    background-color: var(--BGCOLOR-FADE);
+    text-align: center;
+    font-weight: bold;
+
+}
+
+
+
+/* Legger til litt avstand rundt tabellen */
+.menu__article {
+    margin: 2em 0;
+}
+
+
+.menu__header, .menu__item
+{
+    width: 100%;
+    padding: 1em;
+    border: medium ridge var(--BORDER-COLOR);
+
+    /* Sentrerer tekst og tall i cellene */
+    text-align: center;        /* Horisontal sentrering */
+    vertical-align: middle;    /* Vertikal sentrering */
+
+
+}
+
+@media screen and (min-width:576px)
+{
+    .header__h1::before
+    {
+        content: '🌮 '
+
+    }
+    .header__h1::after
+    {
+        content: ' 🌮'
+
+    }
+}
+
+
+    

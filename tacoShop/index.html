@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Angir dokumenttypen som HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Sikrer at nettsiden er responsiv og skaleres riktig på ulike enheter -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Definerer forfatteren av nettsiden -->
+    <meta name="author" content="Ali">
+    <!-- Beskrivelse av nettsiden, som ofte brukes av søkemotorer -->
+    <meta name="description" content="The official website for The Taco Shop">
+    <!-- Tittelen som vises i nettleserfanen -->
+    <title>tacoShopDocument</title>
+
+    <!-- Lenker til CSS-stilark -->
+    <link rel="stylesheet" href="cssFolder/style.css">
+
+    <!-- Legger til et ikon som vises i nettleserfanen -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Lenker til JavaScript-filen, som lastes inn etter at HTML-en er ferdig lastet -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <!-- Header-delen av nettsiden -->
+    <header class="header">
+
+        <!-- Tittel i headeren -->
+        <h1 class="header__h1">The Taco Shop</h1>
+
+        <!-- Navigasjonsmeny i headeren -->
+        <nav class="header__nav">
+            <ul class="header__ul">
+
+                <!-- Lenker til forskjellige seksjoner og sider -->
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
+                <li>
+                    <a href="hours.html">Hours</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero-seksjonen, ofte brukt til å introdusere nettsiden -->
+    <section class="hero">
+
+        <!-- En velkomsttittel -->
+        <h2 class="hero__h2">Welcome!</h2>
+
+        <!-- Figur som inneholder et bilde og en bildetekst -->
+        <figure>
+
+            <!-- Bildet med tacos og drikke -->
+            <img src="imageFolder/tacos_and_drink_1000x667.png" alt="Tacos and a Drink" title="We love tacos!" width="1000"
+                height="667">
+
+            <!-- Skjult bildetekst for tilgjengelighet (f.eks. skjermlesere) -->
+            <figcaption class="offscreen">
+                Tacos and a Drink
+            </figcaption>
+        </figure>
+    </section>
+
+    <!-- Hovedinnholdet på nettsiden -->
+    <main class="main">
+
+        <!-- Artikkel med menyen -->
+        <article id="menu" class="main__article menu">
+
+            <!-- Tittel for menyseksjonen -->
+            <h2 class="menu__h2">Our Menu</h2>
+
+            <!-- Tabell som viser menyen -->
+            <table class="menu__container">
+
+                <!-- Skjult tekst som beskriver tabellen for tilgjengelighet -->
+                <caption class="offscreen">Our Tacos</caption>
+
+                <!-- Tabelloverskrifter -->
+                <thead>
+                    <tr>
+                        <th class="menu__header" scope="col">Tacos</th>
+                        <th class="menu__header" scope="col">Quantity</th>
+                        <th class="menu__header" scope="col">Price</th>
+                    </tr>
+                </thead>
+                <!-- Innholdet i tabellen -->
+                <tbody>
+                    <!-- Rad for crunchy tacos -->
+                    <tr>
+                        <th class="menu__item menu__cr" scope="row" rowspan="3">
+                            Crunchy
+                        </th>
+                        <td class="menu__item">1</td>
+                        <td class="menu__item">$1.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">2</td>
+                        <td class="menu__item">$2.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">3</td>
+                        <td class="menu__item">$3.25</td>
+                    </tr>
+                    <!-- Rad for soft tacos -->
+                    <tr>
+                        <th class="menu__item menu__sf" scope="row" rowspan="3">
+                            Soft
+                        </th>
+                        <td class="menu__item">1</td>
+                        <td class="menu__item">$2.00</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">2</td>
+                        <td class="menu__item">$3.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">3</td>
+                        <td class="menu__item">$4.50</td>
+                    </tr>
+                </tbody>
+
+                <!-- Fotnote i tabellen -->
+                <tfoot>
+                    <tr>
+                        <td class="menu__item menu__cs" colspan="3">
+                            Chips &amp; Salsa $2
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- Lenke for å gå tilbake til toppen av siden -->
+            <p class="center">
+                <a href="#">Back To Top</a>
+            </p>
+        </article>
+    </main>
+
+    <!-- En horisontal linje (skillelinje) -->
+    <hr>
+    
+    <!-- Bunntekst på nettsiden -->
+    <footer class="footer">
+        <p>
+            <!-- Copyright-informasjon -->
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <!-- Ekstra tekst i bunnteksten -->
+            <span class="nowrap">Alis magiske verden</span>
+        </p>
+    </footer>
+</body>
+
+</html>

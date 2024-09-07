@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Angir dokumenttypen som HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Sikrer at nettsiden er responsiv og tilpasser seg skjermstørrelsen på ulike enheter -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Definerer forfatteren av nettsiden -->
+    <meta name="author" content="Ali">
+    <!-- Beskrivelse av nettsiden, som brukes av søkemotorer -->
+    <meta name="description" content="About The Taco Shop">
+    <!-- Tittelen som vises i nettleserfanen -->
+    <title>aboutTSDocument</title>
+
+    <!-- Lenker til eksterne ressurser -->
+
+    <!-- Kobling til stilarket (CSS) -->
+    <link rel="stylesheet" href="cssFolder/style.css">
+    <!-- Favicon-ikonet som vises i nettleserfanen -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Lenker til JavaScript-filen, som lastes inn etter HTML-en er ferdig lastet -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <!-- Header-delen av nettsiden -->
+    <header class="header">
+        <!-- Tittel for headeren -->
+        <h1 class="header__h1">The Taco Shop</h1>
+        <!-- Navigasjonsmeny i headeren -->
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <!-- Lenker til ulike sider på nettstedet -->
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/#menu">Menu</a>
+                </li>
+                <li>
+                    <a href="hours.html">Hours</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero-seksjon, som ofte brukes til å fremheve visuelt innhold -->
+    <section class="hero">
+        <!-- Figur som inneholder et bilde og en bildetekst -->
+        <figure>
+            <!-- Bilde av "Tacos Delicioso" -->
+            <img src="imageFolder/tacos_delicioso_1000x667.png" alt="Tacos Delicioso" title="Tacos Delicioso!" width="1000"
+                height="667">
+            <!-- Skjult bildetekst for tilgjengelighet (skjermlesere) -->
+            <figcaption class="offscreen">
+                Try these Delicious Tacos
+            </figcaption>
+        </figure>
+    </section>
+
+    <!-- Hovedinnholdet på nettsiden -->
+    <main class="main">
+        <!-- Artikkel som beskriver om "The Little Taco Shop" -->
+        <article id="about" class="main__article about">
+            <!-- Tittel med en forkortelse for The Little Taco Shop -->
+            <h2>About <abbr title="The Little Taco Shop">LTS</abbr></h2>
+            <!-- Paragraf som beskriver butikkens historie -->
+            <p>
+                <abbr title="The Little Taco Shop">LTS</abbr> was founded in <time datetime="2022">2022</time>. Our shop
+                was built from a <strong>love of tacos</strong> 🌮🌮🌮. We hope our shop adds a unique and interesting
+                place to our little town.
+            </p>
+            <!-- En sideseksjon som inneholder trivia -->
+            <aside class="about__trivia">
+                <!-- Tittel for trivia-seksjonen -->
+                <h3>Taco Trivia</h3>
+                <!-- En detaljert opplysning som kan utvides -->
+                <details>
+                    <!-- Sammendrag som viser trivia-spørsmålet -->
+                    <summary>When did tacos first appear in the United Stated?</summary>
+                    <!-- Svaret på trivia-spørsmålet -->
+                    <p class="about__trivia-answer">
+                        Jeffrey M. Pilcher, taco historian and professor of history at the University of Minnesota, says
+                        the earliest mention of tacos in the United States are in a newspaper from <time
+                            datetime="1905">1905</time>. (Source: <cite><a
+                                href="https://www.smithsonianmag.com/arts-culture/where-did-the-taco-come-from-81228162/"
+                                target="_blank">Smithsonian Magazine</a></cite>) <!-- åpner i ny fane -->
+                    </p>
+                </details>
+            </aside>
+        </article>
+    </main>
+
+    <!-- Bunntekst på nettsiden -->
+    <footer class="footer">
+        <p>
+            <!-- Copyright-informasjon -->
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <!-- Ekstra tekst i bunnteksten -->
+            <span class="nowrap">Alis magiske verden</span>
+        </p>
+    </footer>
+</body>
+
+</html>
